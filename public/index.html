@@ -24,11 +24,11 @@
 				</thead>
 				<tbody>
 					<tr>
-						<td><input type="text" class="form-control" ng-model= "contact.name"></td>
-						<td><input type="text" class="form-control" ng-model= "contact.email"></td>		
-						<td><input type="text" class="form-control" ng-model= "contact.number"></td>	
-						<td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
-						<td><button class="btn btn-info" ng-click="update()">Update</button></td>		
+						<td><input id="name" type="text" class="form-control" ng-model= "contact.name"></td>
+						<td><input id="email" type="text" class="form-control" ng-model= "contact.email"></td>		
+						<td><input id="number" type="text" class="form-control" ng-model= "contact.number"></td>	
+						<td><button id="add" class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+						<td><button id="update" class="btn btn-info hide" ng-click="update()">Update</button></td>		
 					</tr>
 					<tr ng-repeat="contact in contactlist">
 						<td>{{contact.name}}</td>
@@ -43,6 +43,7 @@
 		
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.29/angular.min.js"></script>
+	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="controllers/controller.js"></script>
 	</body>
 </html>
