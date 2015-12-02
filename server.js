@@ -1,5 +1,6 @@
 var express = require('express');
 var mongojs = require('mongojs');
+var bodyParser = require('body-parser');
 var app = express();
 var db = mongojs('contactlist', ['contactlist']);
 
@@ -8,6 +9,7 @@ var db = mongojs('contactlist', ['contactlist']);
 });*/
 
 app.use(express.static(__dirname + "/public"));
+app.use(bodyParser.json());
 
 app.get('/contactlist', function(req, res) {
 	console.log('get Request');
@@ -38,6 +40,11 @@ app.get('/contactlist', function(req, res) {
 	});
 
 });
+
+app.post('/contactlist', function  (req, res) {
+	//we need install body parser
+	console.log(req.body);
+})
 
 app.listen(3000);
 console.log('Server running');
