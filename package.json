@@ -1,0 +1,10 @@
+{
+  "author": "Ezequiel",
+  "name": "contact_list_nodejs",
+  "description": "Contact list built with nodejs",
+  "version": "0.0.1",
+  "main": "server.js",
+  "dependencies": {
+    "express": "*"
+  }
+}
