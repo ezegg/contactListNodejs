@@ -1,5 +1,7 @@
 var express = require('express');
+var mongojs = require('mongojs');
 var app = express();
+var db = mongojs('contactlist', ['contactlist']);
 
 /*app.get('/', function  (req, res) {
 	res.send('Hello world');
