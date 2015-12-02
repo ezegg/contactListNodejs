@@ -11,7 +11,7 @@ app.use(express.static(__dirname + "/public"));
 
 app.get('/contactlist', function(req, res) {
 	console.log('get Request');
-	person1 = {
+	/*person1 = {
 		name: 'Ezequiel',
 		email: 'ezeezegg@gmail.com',
 		number: '1111-1111'
@@ -30,7 +30,13 @@ app.get('/contactlist', function(req, res) {
 	};
 
 	var contactlist = [person1, person2, person3];
-	res.json(contactlist);
+	res.json(contactlist);*/
+
+	db.contactlist.find(function  (err, docs) {
+		console.log(docs);
+		res.json(docs);
+	});
+
 });
 
 app.listen(3000);
