@@ -44,6 +44,9 @@ app.get('/contactlist', function(req, res) {
 app.post('/contactlist', function  (req, res) {
 	//we need install body parser
 	console.log(req.body);
+	db.contactlist.insert(req.body, function  (err, doc) {
+		res.json(doc);
+	})
 })
 
 app.listen(3000);
