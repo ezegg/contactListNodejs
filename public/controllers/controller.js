@@ -1,26 +1,10 @@
-function AppCtrl($scope) {
+function AppCtrl($scope, $http) {
 	console.log('hello controller');
 
-	person1 = {
-		name: 'Ezequiel',
-		email: 'ezeezegg@gmail.com',
-		number: '1111-1111'
-	};
-
-	person2 = {
-		name: 'sebastian',
-		email: 'sebastian@gmail.com',
-		number: '2222-1111'
-	};
-
-	person3 = {
-		name: 'jorge',
-		email: 'jorge@gmail.com',
-		number: '3333-1111'
-	};
-
-	var contactlist = [person1, person2, person3];
-
-	$scope.contactlist = contactlist;
+	$http.get('/contactlist').success(function  (response) {
+		console.log('got the data i requested');
+		console.log(response)
+		$scope.contactlist = response;
+	});
 
 }
